@@ -1,1 +1,1 @@
-export const END_POINT = "http://localhost:5000"
+export const END_POINT = "http://172.29.21.3:5000"

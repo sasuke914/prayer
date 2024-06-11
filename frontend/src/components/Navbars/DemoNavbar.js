@@ -19,6 +19,7 @@ import { logo } from "assets"
 import { signOut } from "api/api_user"
 import '../style.css'
 import auth from "components/auth/authHelper"
+import { END_POINT } from "config"
 
 class DemoNavbar extends React.Component {
 
@@ -134,7 +135,7 @@ class DemoNavbar extends React.Component {
                 <UncontrolledDropdown nav>
                   <DropdownToggle nav className="p-0">
                     <i className="ni ni-collection d-lg-none mr-1" />
-                    <div className="avatar" style={{ backgroundImage: `url(http://localhost:5000/api/userInfo/photo/${auth.isAuthenticated().user._id})` }}></div>
+                    <div className="avatar" style={{ backgroundImage: `url(${END_POINT}/api/userInfo/photo/${auth.isAuthenticated().user._id})` }}></div>
                   </DropdownToggle>
                   <DropdownMenu>
                     <DropdownItem to="/profile-page" tag={Link}>

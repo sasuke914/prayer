@@ -7,6 +7,7 @@ import auth from 'components/auth/authHelper'
 import { Link } from 'react-router-dom'
 import { deleteCard } from 'api/api_prayer'
 import { FaTrash } from 'react-icons/fa'
+import { END_POINT } from 'config'
 
 const PrayerCard = ({ data, index, setFlag, flag }) => {
   const [state, setState] = useState(false)
@@ -26,7 +27,7 @@ const PrayerCard = ({ data, index, setFlag, flag }) => {
           <h6 className={`text-${colorInfo[index % 6]} text-uppercase`}>
             {data1.title}
           </h6>
-          <div className="shadow-lg w-auto imgCover" style={{ height: '200px', backgroundImage: `url(http://localhost:5000/api/prayer/photo/${data1._id})` }}> </div>
+          <div className="shadow-lg w-auto imgCover" style={{ height: '200px', backgroundImage: `url(${END_POINT}/api/prayer/photo/${data1._id})` }}> </div>
           {jwt && jwt.user._id ?
             <>
               {jwt.user._id === data1.postedBy || jwt.user._id === data1.postedBy._id ?

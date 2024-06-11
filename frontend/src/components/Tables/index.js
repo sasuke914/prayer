@@ -13,6 +13,7 @@ import { colorInfo } from 'constant'
 import { ModalContribute1 } from 'components/Modals'
 import { prayerOne } from 'api/api_prayer'
 import { energy } from 'assets'
+import { END_POINT } from 'config'
 
 
 const TableUser = ({ data, prayerData }) => {
@@ -55,7 +56,7 @@ const TableUser = ({ data, prayerData }) => {
                     className='rounded-circle '
                     style={{ width: '30px', height: '30px' }}
                     alt='...'
-                    src={`http://localhost:5000/api/userInfo/photo/${item.postedBy._id ? item.postedBy._id : item.postedBy}`} />
+                    src={`${END_POINT}/api/userInfo/photo/${item.postedBy._id ? item.postedBy._id : item.postedBy}`} />
                 </td>
                 <td onClick={() => handleClick(item.postedBy)}><u>{item.userName}</u></td>
                 <td><FaithAvatar src={faithIamgeInfo[item.faith]} /></td>

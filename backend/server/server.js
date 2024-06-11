@@ -38,6 +38,8 @@ app.use(cookieParser());
 app.use(cors());
 
 app.use(express.static(path.join(__dirname, '/build')))
+
+
 app.use('/uploads', express.static(path.join(CURRENT_WORKING_DIR, '/server/uploads')))
 
 app.use("/api/userInfo", userInfoRoutes);
@@ -86,6 +88,7 @@ app.post('/send-email', (req, res) => {
          res.status(500).json({ success: false, error: err.message });
       });
 });
+console.log("aaa", __dirname)
 
 app.get('*', (req, res) => {
    res.sendFile(path.join(__dirname, '/build/index.html'))

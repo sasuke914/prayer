@@ -14,6 +14,7 @@ import { FaithAvatar } from "components/Avatars"
 import { faithIamgeInfo } from "constant"
 import { TableFeed } from "components/Tables"
 import { ProfileSmallText } from "components/Titles"
+import { END_POINT } from "config"
 
 class Profile extends React.Component {
 
@@ -71,7 +72,7 @@ class Profile extends React.Component {
             <Card className="card-profile shadow" style={{ marginTop: '100px' }}>
               <Row className="justify-content-center">
                 <Col>
-                  <ProfileAvatar avatar={`http://localhost:5000/api/userInfo/photo/${auth.isAuthenticated().user._id}`} />
+                  <ProfileAvatar avatar={`${END_POINT}/api/userInfo/photo/${auth.isAuthenticated().user._id}`} />
                   <ProfileData />
                 </Col>
               </Row>

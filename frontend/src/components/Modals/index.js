@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js'
+import { writeText } from 'clipboard-polyfill'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import {
@@ -33,6 +34,7 @@ import { faithIamgeInfo, faithNameInfo } from 'constant'
 import { ribbon } from 'assets'
 import { comments } from 'api/api_user'
 import { prayerUpdate } from 'api/api_prayer'
+import { END_POINT } from 'config'
 
 const ModalHelp = () => {
 
@@ -316,7 +318,7 @@ const ModalContribute = ({ data, state, setState, color }) => {
           <NameBtn title={data.userName} color={color} />
           <b className='h2'>{data.title}</b>
         </div>
-        <img className='w-100 border' src={`http://localhost:5000/api/prayer/photo/${data._id}`} alt='...' />
+        <img className='w-100 border' src={`${END_POINT}/api/prayer/photo/${data._id}`} alt='...' />
         <div className='mt-5 d-flex'>
           <div className='mr-3 itemCenter'>
             <span color='info'>Total {data.type === 'prayer' ? 'Prayers' : 'Energy'} <br /> <b style={{ fontSize: '20px' }}> {data.type === 'prayer' ? total : totalEnergy}</b></span>
@@ -403,7 +405,7 @@ const ModalContribute1 = ({ data, state, setState, color }) => {
           <NameBtn title={data.userName} color={color} />
           <b className='h2'>{data.title}</b>
         </div>
-        <img className='w-100 border' src={`http://localhost:5000/api/prayer/photo/${data._id}`} alt='...' />
+        <img className='w-100 border' src={`${END_POINT}/api/prayer/photo/${data._id}`} alt='...' />
         <div className='mt-5 d-flex'>
           <div className='mr-3 itemCenter'>
             <span color='info'>Total {data.type === 'prayer' ? 'Prayers' : 'Energy'} <br /> <b style={{ fontSize: '20px' }}> {data.type === 'prayer' ? total : totalEnergy}</b></span>
@@ -442,7 +444,7 @@ const ModalPaypal = () => {
       };
 
       // Send transaction details to your server
-      axios.post('http://localhost:5000/paypal-transaction-complete', transactionData)
+      axios.post('${END_POINT}/paypal-transaction-complete', transactionData)
         .then(response => {
           console.log('Transaction saved:', response.data);
         })
@@ -489,17 +491,19 @@ const ModalPaypal = () => {
 
 const ModalSocial = ({ state, setState }) => {
 
-  const [data, setData] = useState('http://localhost:3000/profile-page')
-  const copyToClipboard = async () => {
-    try {
-      await navigator.clipboard.writeText(data);
-      alert('Copied!')
-    } catch (error) {
-    }
-  }
   const url = 'Your domain address'
   const title = 'My website'
-
+  const [copied, setCopied] = useState(false);
+  const copyToClipboard = () => {
+    writeText(url)
+      .then(() => {
+        setCopied(true);
+        console.log('Text copied to clipboard');
+      })
+      .catch(err => {
+        console.error('Error copying text: ', err);
+      });
+  };
   return (
     <>
       <Modal
@@ -542,6 +546,7 @@ const ModalSocial = ({ state, setState }) => {
               {url}
               <Button color='primary float-right' style={{ padding: '7px', borderRadius: '23px' }} onClick={copyToClipboard} >copy</Button>
             </p>
+            {copied && <span>Copied!</span>}
           </div>
         </Container>
       </Modal>

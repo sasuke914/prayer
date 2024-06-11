@@ -34,5 +34,5 @@
     "mongodb": "mongod --dbpath ./database",
     "dev": "concurrently \"npm run mongodb\" \"npm run server\" "
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "http://172.29.21.3:5000"
 }
