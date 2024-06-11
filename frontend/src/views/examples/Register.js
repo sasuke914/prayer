@@ -99,7 +99,7 @@ class Register extends Component {
                           <FaithAvatar src={faithIamgeInfo[this.state.faith]} />
                         </div>
                         <InputPassword onChange={this.handleChange('password')} />
-                        <InputPassword />
+                        {/* <InputPassword /> */}
                         <div style={{ display: 'flex' }}>
                           <CheckBox title='I agree with the ' />
                           <a href="#pablo">&nbsp; Privacy Policy</a>
