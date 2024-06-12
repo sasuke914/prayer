@@ -1,4 +1,4 @@
-const mongoURI = 'mongodb+srv://takedaharuhito0914:6sz48025vy93FgPA@cluster0.dhkxph4.mongodb.net/prayer';
+const mongoURI = 'mongodb://localhost:27017/prayer';
 const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
