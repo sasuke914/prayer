@@ -27,7 +27,6 @@
   "bugs": {
     "url": "https://github.com/creativetimofficial/argon-design-system-react/issues"
   },
-  "homepage": "https://demos.creative-tim.com/argon-design-system-react/",
   "scripts": {
     "start": "cross-env PORT=80 react-scripts start",
     "build": "react-scripts build",
