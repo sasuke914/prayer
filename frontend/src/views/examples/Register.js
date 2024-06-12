@@ -32,7 +32,7 @@ class Register extends Component {
     'password': "",
     'email': "",
     'location': "AU",
-    'faith': 'Baha',
+    'faith': 'Bahai',
     'redirectto': false,
   }
 

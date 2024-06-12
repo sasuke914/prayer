@@ -24,7 +24,7 @@ import slider8 from './img/bg/8.jpg'
 import slider9 from './img/bg/9.jpg'
 import slider10 from './img/bg/10.jpg'
 
-import Baha from './img/faith/Baha.png'
+import Bahai from './img/faith/Baha.png'
 import Buddhism from './img/faith/Buddhism.png'
 import Christianity from './img/faith/Christianity.png'
 import Confucianism from './img/faith/Confucianism.png'
@@ -45,5 +45,5 @@ export {
   github, google, ribbon, energy,
   defaultAvatar,
   slider1, slider2, slider3, slider4, slider5, slider6, slider7, slider8, slider10, slider9,
-  Baha, Buddhism, Christianity, Confucianism, Hinduism, Islam, Jainism, Judaism, Shikism, Shinto, Spiritualit, Taoism, Other
+  Bahai, Buddhism, Christianity, Confucianism, Hinduism, Islam, Jainism, Judaism, Shikism, Shinto, Spiritualit, Taoism, Other
 }

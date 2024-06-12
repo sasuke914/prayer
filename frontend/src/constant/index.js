@@ -9,7 +9,7 @@ import { Shikism } from "assets"
 import { Jainism } from "assets"
 import { Hinduism } from "assets"
 import { Christianity } from "assets"
-import { Baha } from "assets"
+import { Bahai } from "assets"
 import { Other } from "assets"
 import {
   defaultAvatar,
@@ -59,7 +59,7 @@ const faithNameInfo = [
 ]
 
 const faithIamgeInfo = {
-  Baha: Baha,
+  Bahai: Bahai,
   Buddhism: Buddhism,
   Christianity: Christianity,
   Confucianism: Confucianism,
